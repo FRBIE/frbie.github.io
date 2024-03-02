@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="定义一种事物有多种子形态 类型方法参数的多态 Food food， 可以传入food 或food 的子类（meat，vegetable） 引用的多态 Animal animal &#x3D; new Dog(),animal 父类引用可以接受（指向）一个子类对象 这里涉及到运行类型和编译类型，以及动态绑定机制和向上&#x2F;下转型 &#x3D;号左边是编译类型，编译必须过了才能运行，至于运行是否">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2024/03/02/%E5%A4%9A%E6%80%81%E7%9A%84%E7%90%86%E8%A7%A3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="定义一种事物有多种子形态 类型方法参数的多态 Food food， 可以传入food 或food 的子类（meat，vegetable） 引用的多态 Animal animal &#x3D; new Dog(),animal 父类引用可以接受（指向）一个子类对象 这里涉及到运行类型和编译类型，以及动态绑定机制和向上&#x2F;下转型 &#x3D;号左边是编译类型，编译必须过了才能运行，至于运行是否">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-03-02T04:56:49.564Z">
+<meta property="article:modified_time" content="2023-10-30T14:50:52.420Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-多态的理解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/02/%E5%A4%9A%E6%80%81%E7%9A%84%E7%90%86%E8%A7%A3/" class="article-date">
+  <time class="dt-published" datetime="2024-03-02T04:56:49.564Z" itemprop="datePublished">2024-03-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p><strong>一种事物有多种子形态</strong></p>
+<h1 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h1><p><strong>方法参数的多态</strong></p>
+<p><em>Food food， 可以传入food 或food 的子类（meat，vegetable）</em></p>
+<p><strong>引用的多态</strong></p>
+<p><em>Animal animal &#x3D; new Dog(),animal 父类引用可以接受（指向）一个子类对象</em></p>
+<p><em>这里涉及到运行类型和编译类型，以及动态绑定机制和向上&#x2F;下转型</em></p>
+<p>&#x3D;号左边是编译类型，编译必须过了才能运行，至于运行是否出错，不会提示</p>
+<p>&#x3D;号右边是运行类型，调用方法时，先在运行类型里找对应的方法，如果没有就去编译类型找？（还是逐级往父类找？）</p>
+<blockquote>
+<p><strong>属性没有多态，看编译类型</strong></p>
+</blockquote>
+<p>向上转型：父类引用可以接受一个子类对象</p>
+<p>向下转型：前提是运行类型匹配，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Animal</span> <span class="variable">animal</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Dog</span>();</span><br><span class="line"><span class="type">Dog</span> <span class="variable">dog</span> <span class="operator">=</span> (Dog)animal;</span><br></pre></td></tr></table></figure>
+
+<p>这是可行的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Object obj = new String;</span><br><span class="line">Dog dog = (Dog)obj;</span><br></pre></td></tr></table></figure>
+
+<p>这是不可行的</p>
+<p><strong>方法的重写&#x2F;重载体现多态</strong><br>如何理解：同一个方法名执行不同代码块</p>
+<p><strong>instanceof 方法用于判断a的运行类型是不是animal，或其子类（这里回忆一下子类的概念“孙子也是子类”）</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a instanceof Animal</span><br></pre></td></tr></table></figure>
+
+<h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Person[] persons = <span class="keyword">new</span> <span class="title class_">Person</span>[<span class="number">4</span>];</span><br><span class="line">persons[<span class="number">0</span>]  = <span class="keyword">new</span> <span class="title class_">student</span>();</span><br><span class="line">persons[<span class="number">1</span>]  = <span class="keyword">new</span> <span class="title class_">teacher</span>();</span><br><span class="line"><span class="keyword">for</span>(Person person: persons)&#123;</span><br><span class="line">  person.say();</span><br><span class="line">  <span class="keyword">if</span>(person <span class="keyword">instanceof</span> student)&#123;</span><br><span class="line">    ((Student)person).study;</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(person <span class="keyword">instanceof</span> Teacher)&#123;</span><br><span class="line">    ((Teacher)person).teach;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h1><p><strong>代码复用</strong></p>
+<p><em>主人喂食例子，经理和员工例子</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/02/%E5%A4%9A%E6%80%81%E7%9A%84%E7%90%86%E8%A7%A3/" data-id="clt9m5mbp0008kch09uk08y4z" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/03/02/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91-%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86%E8%83%BD%E5%8A%9B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/03/02/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91-%E6%A8%A1%E6%9D%BF%E6%B6%88%E6%81%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/03/02/%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E3%80%81%E7%99%BB%E5%BD%95%E3%80%81%E9%89%B4%E6%9D%83%E5%9C%BA%E6%99%AF/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%BE%AE%E4%BF%A1%E6%8E%A5%E5%8F%A3%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91-%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86%E8%83%BD%E5%8A%9B/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%A4%9A%E6%80%81%E7%9A%84%E7%90%86%E8%A7%A3/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91-%E6%A8%A1%E6%9D%BF%E6%B6%88%E6%81%AF/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

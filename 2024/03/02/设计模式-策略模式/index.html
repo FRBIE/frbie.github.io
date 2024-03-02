@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="设计模式-策略模式今天在写java实验时，要求使用策略模式设计一个类的攻击模式，故记录下策略模式的学习 定义: 一个类的行为或其算法在  运行时 可以更改  具体怎么做: 定义一系列算法或策略，并将每个算法封装在独立的类中，使得它们可以互相替换。通过使用策略模式，可以在运行时根据需要选择不同的算法，而不需要修改客户端代码。  什么时候使用？使用场景？ 1、如果在一个系统里面有许多类，它们之间的区别">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2024/03/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="设计模式-策略模式今天在写java实验时，要求使用策略模式设计一个类的攻击模式，故记录下策略模式的学习 定义: 一个类的行为或其算法在  运行时 可以更改  具体怎么做: 定义一系列算法或策略，并将每个算法封装在独立的类中，使得它们可以互相替换。通过使用策略模式，可以在运行时根据需要选择不同的算法，而不需要修改客户端代码。  什么时候使用？使用场景？ 1、如果在一个系统里面有许多类，它们之间的区别">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/949675f43fa63e74631e80f4e1f72621.png">
+<meta property="og:image" content="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231031214011178.png">
+<meta property="og:image" content="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231031214026570.png">
+<meta property="og:image" content="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231031214036861.png">
+<meta property="og:image" content="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231031214058751.png">
+<meta property="article:published_time" content="2024-03-02T04:56:49.564Z">
+<meta property="article:modified_time" content="2023-10-31T13:43:07.409Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/949675f43fa63e74631e80f4e1f72621.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-设计模式-策略模式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" class="article-date">
+  <time class="dt-published" datetime="2024-03-02T04:56:49.564Z" itemprop="datePublished">2024-03-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="设计模式-策略模式"><a href="#设计模式-策略模式" class="headerlink" title="设计模式-策略模式"></a>设计模式-策略模式</h1><p>今天在写java实验时，要求使用策略模式设计一个类的攻击模式，故记录下策略模式的学习</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h2><blockquote>
+<p>一个类的行为或其算法在  <strong>运行时</strong> 可以更改</p>
+</blockquote>
+<h2 id="具体怎么做"><a href="#具体怎么做" class="headerlink" title="具体怎么做:"></a>具体怎么做:</h2><blockquote>
+<p>定义一系列算法或策略，并将<strong>每个算法封装在独立的类</strong>中，使得它们可以<strong>互相替换</strong>。通过使用策略模式，可以在<strong>运行时</strong>根据需要选择不同的算法，而不需要修改客户端代码。</p>
+</blockquote>
+<h2 id="什么时候使用？使用场景？"><a href="#什么时候使用？使用场景？" class="headerlink" title="什么时候使用？使用场景？"></a>什么时候使用？使用场景？</h2><blockquote>
+<p>1、如果在一个系统里面有许多类，它们之间的区别仅在于它们的行为，那么使用策略模式可以动态地让一个对象在许多行为中选择一种行为。 </p>
+<p>2、一个系统需要动态地在几种算法中选择一种。 </p>
+<p>3、如果一个对象有很多的行为，如果不用恰当的模式，这些行为就只好使用多重的条件选择语句来实现。</p>
+</blockquote>
+<p><code>注意事项：如果一个系统的策略多于四个，就需要考虑使用混合模式，解决策略类膨胀的问题。</code></p>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><blockquote>
+<p>1、算法可以自由切换。 </p>
+<p>2、避免使用多重条件判断。 </p>
+<p>3、扩展性良好。</p>
+</blockquote>
+<p><img src="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/949675f43fa63e74631e80f4e1f72621.png"></p>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>显而易见，客户端<strong>必须知道所有的策略类</strong>，并自行决定使用哪一个策略类。</p>
+<p>另外，策略模式需要生成很多策略类，麻烦！</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p><img src="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231031214011178.png" alt="image-20231031214011178"></p>
+<p><img src="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231031214026570.png" alt="image-20231031214026570"></p>
+<p><img src="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231031214036861.png" alt="image-20231031214036861"></p>
+<p><img src="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231031214058751.png" alt="image-20231031214058751"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" data-id="clt9m5mbt000ekch063cpcbn9" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/03/02/%E6%8F%90%E9%97%AE%E7%9A%84%E6%99%BA%E6%85%A7%20-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/03/02/Springboot%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%AE%9E%E4%BD%93%E7%B1%BB%E7%9A%84%E5%90%84%E7%A7%8D%E7%B1%BB%E5%9E%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/03/02/%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E3%80%81%E7%99%BB%E5%BD%95%E3%80%81%E9%89%B4%E6%9D%83%E5%9C%BA%E6%99%AF/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%BE%AE%E4%BF%A1%E6%8E%A5%E5%8F%A3%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91-%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86%E8%83%BD%E5%8A%9B/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%A4%9A%E6%80%81%E7%9A%84%E7%90%86%E8%A7%A3/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91-%E6%A8%A1%E6%9D%BF%E6%B6%88%E6%81%AF/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

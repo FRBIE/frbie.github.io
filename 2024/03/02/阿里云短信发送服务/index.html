@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="阿里云短信发送服务 公众号开发学习记录，方便后续查阅  springboot后端  具体步骤1.登录阿里云，开通短信服务，申请短信签名和短信模板(需要在项目代码中配置短信签名ID和模板ID)  个人账号一般只能申请用于测试的短信签名和模板，绑定5个测试手机号，要向任何人发送需要有企业认证  2.生成账号的AccessKey和AccessSecret(一般存到数据库表中，从数据库表中select，密">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2024/03/02/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9F%AD%E4%BF%A1%E5%8F%91%E9%80%81%E6%9C%8D%E5%8A%A1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="阿里云短信发送服务 公众号开发学习记录，方便后续查阅  springboot后端  具体步骤1.登录阿里云，开通短信服务，申请短信签名和短信模板(需要在项目代码中配置短信签名ID和模板ID)  个人账号一般只能申请用于测试的短信签名和模板，绑定5个测试手机号，要向任何人发送需要有企业认证  2.生成账号的AccessKey和AccessSecret(一般存到数据库表中，从数据库表中select，密">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-03-02T04:56:49.559Z">
+<meta property="article:modified_time" content="2023-11-01T15:14:16.970Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-阿里云短信发送服务" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/02/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9F%AD%E4%BF%A1%E5%8F%91%E9%80%81%E6%9C%8D%E5%8A%A1/" class="article-date">
+  <time class="dt-published" datetime="2024-03-02T04:56:49.559Z" itemprop="datePublished">2024-03-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="阿里云短信发送服务"><a href="#阿里云短信发送服务" class="headerlink" title="阿里云短信发送服务"></a>阿里云短信发送服务</h1><blockquote>
+<p>公众号开发学习记录，方便后续查阅  springboot后端</p>
+</blockquote>
+<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><p>1.登录阿里云，开通短信服务，申请<strong>短信签名</strong>和<strong>短信模板</strong>(需要在项目代码中配置<strong>短信签名ID和模板ID</strong>)</p>
+<blockquote>
+<p>个人账号一般只能申请用于测试的短信签名和模板，绑定5个测试手机号，要向任何人发送需要有企业认证</p>
+</blockquote>
+<p>2.生成账号的<strong>AccessKey和AccessSecret</strong>(一般存到<strong>数据库表</strong>中，从数据库表中select，<strong>密钥最好不要放在代码中</strong>，防止上传到公共平台被恶意使用)</p>
+<p>3.根据阿里云操作提示，导入相关依赖</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--阿里云短信服务依赖--&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;com.aliyun&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;aliyun-java-sdk-core&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;<span class="number">4.3</span><span class="number">.3</span>&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;fastjson&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;<span class="number">1.2</span><span class="number">.76</span>&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;com.aliyun&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;alibabacloud-dysmsapi20170525&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;<span class="number">2.0</span><span class="number">.24</span>&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p>4.复制阿里云官方demo进行改造</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://next.api.aliyun.com/api/Dysmsapi/2017-05-25/SendSms?spm=5176.25163407.overview-index-9c3d4_4cfbe_0.25.24f8bb6erZ05tQ&sdkStyle=dara&tab=DEMO">SendSms_短信服务_API调试-阿里云OpenAPI开发者门户 (aliyun.com)</a></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.aliyun.auth.credentials.Credential;</span><br><span class="line"><span class="keyword">import</span> com.aliyun.auth.credentials.provider.StaticCredentialProvider;</span><br><span class="line"><span class="keyword">import</span> com.aliyun.core.http.HttpClient;</span><br><span class="line"><span class="keyword">import</span> com.aliyun.core.http.HttpMethod;</span><br><span class="line"><span class="keyword">import</span> com.aliyun.core.http.ProxyOptions;</span><br><span class="line"><span class="keyword">import</span> com.aliyun.httpcomponent.httpclient.ApacheAsyncHttpClientBuilder;</span><br><span class="line"><span class="keyword">import</span> com.aliyun.sdk.service.dysmsapi20170525.models.*;</span><br><span class="line"><span class="keyword">import</span> com.aliyun.sdk.service.dysmsapi20170525.*;</span><br><span class="line"><span class="keyword">import</span> com.google.gson.Gson;</span><br><span class="line"><span class="keyword">import</span> darabonba.core.RequestConfiguration;</span><br><span class="line"><span class="keyword">import</span> darabonba.core.client.ClientOverrideConfiguration;</span><br><span class="line"><span class="keyword">import</span> darabonba.core.utils.CommonUtil;</span><br><span class="line"><span class="keyword">import</span> darabonba.core.TeaPair;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.net.InetSocketAddress;</span><br><span class="line"><span class="keyword">import</span> java.time.Duration;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.CompletableFuture;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SendSms</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line">       </span><br><span class="line">        <span class="type">StaticCredentialProvider</span> <span class="variable">provider</span> <span class="operator">=</span> StaticCredentialProvider.create(Credential.builder()</span><br><span class="line">              </span><br><span class="line">                .accessKeyId(System.getenv(<span class="string">&quot;ALIBABA_CLOUD_ACCESS_KEY_ID&quot;</span>))</span><br><span class="line">                .accessKeySecret(System.getenv(<span class="string">&quot;ALIBABA_CLOUD_ACCESS_KEY_SECRET&quot;</span>))</span><br><span class="line">               </span><br><span class="line">                .build());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Configure the Client</span></span><br><span class="line">        <span class="type">AsyncClient</span> <span class="variable">client</span> <span class="operator">=</span> AsyncClient.builder()</span><br><span class="line">                .region(<span class="string">&quot;cn-hangzhou&quot;</span>) <span class="comment">// Region ID</span></span><br><span class="line">                </span><br><span class="line">                .credentialsProvider(provider)</span><br><span class="line">               </span><br><span class="line">                .overrideConfiguration(</span><br><span class="line">                        ClientOverrideConfiguration.create()</span><br><span class="line">                                  </span><br><span class="line">                                .setEndpointOverride(<span class="string">&quot;dysmsapi.aliyuncs.com&quot;</span>)</span><br><span class="line">                       </span><br><span class="line">                )</span><br><span class="line">                .build();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Parameter settings for API request</span></span><br><span class="line">        <span class="type">SendSmsRequest</span> <span class="variable">sendSmsRequest</span> <span class="operator">=</span> SendSmsRequest.builder()</span><br><span class="line">                </span><br><span class="line">                .build();</span><br><span class="line"></span><br><span class="line">       </span><br><span class="line">        CompletableFuture&lt;SendSmsResponse&gt; response = client.sendSms(sendSmsRequest);</span><br><span class="line">       </span><br><span class="line">        <span class="type">SendSmsResponse</span> <span class="variable">resp</span> <span class="operator">=</span> response.get();</span><br><span class="line">        System.out.println(<span class="keyword">new</span> <span class="title class_">Gson</span>().toJson(resp));</span><br><span class="line">       </span><br><span class="line">        client.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>结合具体业务逻辑进行改造</p>
+</blockquote>
+<p>改造后的<strong>Service层</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 短信发送服务类，包含短信发送验证码及验证码校验</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SendSmsImpl</span> <span class="keyword">implements</span> <span class="title class_">SendMsmService</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * redis相关</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    RedisTemplate&lt;String,String&gt; redisTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 用于获取平台配置信息</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    PlatformConfigMapper platformConfigMapper;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *  根据传入的短信验证码、手机号 调用阿里云短信服务的发送接口 完成信息发送</span></span><br><span class="line"><span class="comment">     *  并返回短信发送结果(成功 or 失败)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span>  <span class="type">boolean</span> <span class="title function_">send</span><span class="params">(Map&lt;String, Object&gt; param, String phone)</span> &#123;</span><br><span class="line">        <span class="comment">//手机号为空，返回发送短信失败的结果</span></span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(phone)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 从数据库中获取 阿里云短信发送接口的调用凭证 ACCESS_KEY_ID和ACCESS_KEY_SECRET</span></span><br><span class="line">        <span class="type">StaticCredentialProvider</span> <span class="variable">provider</span> <span class="operator">=</span> StaticCredentialProvider.create(Credential.builder()</span><br><span class="line">                .accessKeyId(platformConfigMapper.getByKey(AliConfigConstants.ACCESS_KEY_ID))</span><br><span class="line">                .accessKeySecret(platformConfigMapper.getByKey(AliConfigConstants.ACCESS_KEY_SECRET)).build());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 配置客户端</span></span><br><span class="line">        <span class="type">AsyncClient</span> <span class="variable">client</span> <span class="operator">=</span> AsyncClient.builder()</span><br><span class="line">                .region(<span class="string">&quot;cn-shenzhen&quot;</span>) <span class="comment">// Region ID</span></span><br><span class="line">                .credentialsProvider(provider)</span><br><span class="line">                .overrideConfiguration(</span><br><span class="line">                        ClientOverrideConfiguration.create()</span><br><span class="line">                                .setEndpointOverride(<span class="string">&quot;dysmsapi.aliyuncs.com&quot;</span>))</span><br><span class="line">                .build();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// API请求的参数设置</span></span><br><span class="line">        <span class="type">SendSmsRequest</span> <span class="variable">sendSmsRequest</span> <span class="operator">=</span> SendSmsRequest.builder()</span><br><span class="line">                .phoneNumbers(phone)</span><br><span class="line">                .signName(SmsParam.SIG_NAME)</span><br><span class="line">                .templateCode(SmsParam.TEMPLATE_CODE)</span><br><span class="line">                .templateParam(JSONObject.toJSONString(param))</span><br><span class="line">                .build();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;<span class="comment">//最终发送</span></span><br><span class="line">            CompletableFuture&lt;SendSmsResponse&gt; response = client.sendSms(sendSmsRequest);</span><br><span class="line">            <span class="type">SendSmsResponse</span> <span class="variable">resp</span> <span class="operator">=</span> response.get();</span><br><span class="line">            <span class="type">boolean</span> <span class="variable">sendSuccess</span> <span class="operator">=</span> resp.getBody().getCode().equals(<span class="string">&quot;OK&quot;</span>)?<span class="literal">true</span>:<span class="literal">false</span>;</span><br><span class="line">            System.out.println(<span class="keyword">new</span> <span class="title class_">Gson</span>().toJson(resp));</span><br><span class="line">            <span class="keyword">return</span> sendSuccess;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            client.close();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *  验证码校验</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">check</span><span class="params">(String phone, String code)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(!Objects.isNull(phone))&#123;                                     <span class="comment">//传入的手机号不为空</span></span><br><span class="line">            <span class="keyword">if</span>(!Objects.isNull(code))&#123;                                  <span class="comment">//传入的验证码不为空</span></span><br><span class="line">                <span class="type">String</span> <span class="variable">_code</span> <span class="operator">=</span> redisTemplate.opsForValue().get(phone);  <span class="comment">//从redis中取出验证码与传入的验证码进行比对</span></span><br><span class="line">                <span class="keyword">if</span>(code.equals(_code))&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Controller层</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/msm&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MsmSendController</span> &#123;</span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    RedisTemplate&lt;String,String&gt; redisTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> SendMsmService sendMsmService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostMapping(&quot;/send&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> R <span class="title function_">sendMsm</span><span class="params">(String phone)</span>&#123;</span><br><span class="line">        <span class="comment">// 根据传入的手机号到redis中查找是否有对应的验证码 即验证码是否已经发送且在有效期内</span></span><br><span class="line">        <span class="comment">// 如果已经发送且在有效期内，则不再发送验证码，并将验证码存在Result中返回</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">code</span> <span class="operator">=</span> redisTemplate.opsForValue().get(phone);</span><br><span class="line">        <span class="keyword">if</span>(!Objects.isNull(code))&#123;</span><br><span class="line">            <span class="keyword">return</span> RUtils.success(<span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;String,String&gt;().put(<span class="string">&quot;验证码&quot;</span>,code));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//如果验证码未发送或已过期，则发送验证码</span></span><br><span class="line">        code = RandomUtil.getFourBitRandom();</span><br><span class="line">        HashMap&lt;String, Object&gt; param = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        param.put(<span class="string">&quot;code&quot;</span>,code);</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">isSend</span> <span class="operator">=</span> sendMsmService.send(param,phone);</span><br><span class="line">        <span class="comment">//发送成功，将验证码和手机号存入redis中</span></span><br><span class="line">        <span class="keyword">if</span>(isSend)&#123;</span><br><span class="line">            redisTemplate.opsForValue().set(phone,code,<span class="number">5</span>, TimeUnit.MINUTES);</span><br><span class="line">            <span class="keyword">return</span> RUtils.success();</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> RUtils.Err(Renum.UNKNOWN_ERROR);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 登录</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line">    <span class="meta">@PostMapping(&quot;/login&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> R <span class="title function_">login</span><span class="params">(String phone,String code)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!Objects.isNull(phone))&#123;                                     <span class="comment">//传入的手机号不为空</span></span><br><span class="line">            <span class="keyword">if</span>(!Objects.isNull(code))&#123;                                  <span class="comment">//传入的验证码不为空</span></span><br><span class="line">                <span class="type">String</span> <span class="variable">_code</span> <span class="operator">=</span> redisTemplate.opsForValue().get(phone);  <span class="comment">//从redis中取出验证码与传入的验证码进行比对</span></span><br><span class="line">                <span class="keyword">if</span>(code.equals(_code))&#123;</span><br><span class="line">                    <span class="keyword">return</span> RUtils.success(<span class="string">&quot;登录成功&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> RUtils.Err(Renum.VERIFICATION_CODE_FALSE);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> RUtils.Err(Renum.UNKNOWN_ERROR);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="需要改进的地方"><a href="#需要改进的地方" class="headerlink" title="需要改进的地方:"></a>需要改进的地方:</h2><p>1.作为<strong>公共组件</strong>供调用时，手机号验证码存入redis的代码不应该放在controller，而要放在service层，controller层要做到尽量不涉及业务逻辑(这块知识需要重新理解)，这样调用者就无需进行设置redis缓存的逻辑</p>
+<p>2.校验成功后需要把缓存删掉</p>
+<p>3.后续考虑把发送记录存到数据库中，方便查看。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/02/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9F%AD%E4%BF%A1%E5%8F%91%E9%80%81%E6%9C%8D%E5%8A%A1/" data-id="clt9m5mbt000gkch0gje08rco" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/03/02/%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/03/02/Redis%E5%AD%A6%E4%B9%A0-%E7%9F%AD%E4%BF%A1%E7%99%BB%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/03/02/%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E3%80%81%E7%99%BB%E5%BD%95%E3%80%81%E9%89%B4%E6%9D%83%E5%9C%BA%E6%99%AF/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%BE%AE%E4%BF%A1%E6%8E%A5%E5%8F%A3%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91-%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86%E8%83%BD%E5%8A%9B/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%A4%9A%E6%80%81%E7%9A%84%E7%90%86%E8%A7%A3/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91-%E6%A8%A1%E6%9D%BF%E6%B6%88%E6%81%AF/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

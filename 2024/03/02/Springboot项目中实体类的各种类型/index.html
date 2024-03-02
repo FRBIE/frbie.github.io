@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Springboot项目中实体类的各种类型(一) 看项目代码过程中看到许多VO，DTO等，还有之前学过的POJO，domain等，对于这些类的各个用法还是不太懂，故整理如下  基本概念POJO(Plain Old Java Object)是一个普通的Java对象，它没有任何特殊的规则或约定。实际上，任何Java对象都可以被认为是POJO Domain Model通常是指模型化真实世界域对象的概念。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2024/03/02/Springboot%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%AE%9E%E4%BD%93%E7%B1%BB%E7%9A%84%E5%90%84%E7%A7%8D%E7%B1%BB%E5%9E%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Springboot项目中实体类的各种类型(一) 看项目代码过程中看到许多VO，DTO等，还有之前学过的POJO，domain等，对于这些类的各个用法还是不太懂，故整理如下  基本概念POJO(Plain Old Java Object)是一个普通的Java对象，它没有任何特殊的规则或约定。实际上，任何Java对象都可以被认为是POJO Domain Model通常是指模型化真实世界域对象的概念。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-03-02T04:56:49.559Z">
+<meta property="article:modified_time" content="2023-11-05T15:34:43.807Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Springboot项目中实体类的各种类型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/02/Springboot%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%AE%9E%E4%BD%93%E7%B1%BB%E7%9A%84%E5%90%84%E7%A7%8D%E7%B1%BB%E5%9E%8B/" class="article-date">
+  <time class="dt-published" datetime="2024-03-02T04:56:49.559Z" itemprop="datePublished">2024-03-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Springboot项目中实体类的各种类型-一"><a href="#Springboot项目中实体类的各种类型-一" class="headerlink" title="Springboot项目中实体类的各种类型(一)"></a>Springboot项目中实体类的各种类型(一)</h1><blockquote>
+<p>看项目代码过程中看到许多VO，DTO等，还有之前学过的POJO，domain等，对于这些类的各个用法还是不太懂，故整理如下</p>
+</blockquote>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>POJO</strong>(Plain Old Java Object)是一个普通的Java对象，它没有任何特殊的规则或约定。实际上，任何<strong>Java</strong>对象都可以被认为是POJO</p>
+<p><strong>Domain</strong> Model通常是指模型化真实世界域对象的概念。在软件开发中，Domain Model是用于描述特定领域内的问题和解决方案的核心组件。</p>
+<p><strong>Data Transfer Object(DTO)<strong>是一种</strong>设计模式</strong>，用于将数据从一个地方转移到另一个地方，DTO通常用于在应用程序的不同部分之间传递数据，或者在网络上传输数据。</p>
+<p>**Value Object(VO)**是一种设计模式，用于封装一组相关的值。VO通常用于将数据传递到视图层，以便进行显示或渲染。</p>
+<p>**Business Object(BO)**，是一种设计模式，即业务对象。一般用在业务层，当业务比较复杂时，用到比较多的业务对象时，可以用BO类组合封装所有的对象一并传递。一般是处理多个对象的工具类或者Service。</p>
+<p>VO,BO,PO,DTO这样分层还是很有意义的。尤其在团队成员较多的情况下，结构更加一目了然，同时也能很大程度避免多端系统数据所需不一致时，有人修改属性影响其他页面。</p>
+<p>但也没有必要完全教条主义，把这些全部用上，需要根据所开发的业务复杂度来取舍，如果业务逻辑本身不复杂，照搬全上反而让开发变得更加复杂。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/02/Springboot%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%AE%9E%E4%BD%93%E7%B1%BB%E7%9A%84%E5%90%84%E7%A7%8D%E7%B1%BB%E5%9E%8B/" data-id="clt9m5mbo0006kch0fcl8h2wk" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/03/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/03/02/%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/03/02/%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E3%80%81%E7%99%BB%E5%BD%95%E3%80%81%E9%89%B4%E6%9D%83%E5%9C%BA%E6%99%AF/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%BE%AE%E4%BF%A1%E6%8E%A5%E5%8F%A3%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91-%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86%E8%83%BD%E5%8A%9B/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%A4%9A%E6%80%81%E7%9A%84%E7%90%86%E8%A7%A3/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91-%E6%A8%A1%E6%9D%BF%E6%B6%88%E6%81%AF/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="微信接口配置踩坑 这东西搞了我n个小时的时间，真的服  本地测试配置1.使用netapp完成内网穿透，认准netapp！ 其他的ngrok或者花生壳啥的不好使！容易出现各种奇奇怪怪的bug(包括域名包含了”-“，这个微信服务器好像就是配置不了),花生壳之前试过一次成功了，今天再次试的时候，怎么都配不成功。 还去搜了各种答案，尝试了几个愚蠢的解决方案(指的是，答案本身就是错的，或者说答案与我的情况不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2024/03/02/%E5%BE%AE%E4%BF%A1%E6%8E%A5%E5%8F%A3%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="微信接口配置踩坑 这东西搞了我n个小时的时间，真的服  本地测试配置1.使用netapp完成内网穿透，认准netapp！ 其他的ngrok或者花生壳啥的不好使！容易出现各种奇奇怪怪的bug(包括域名包含了”-“，这个微信服务器好像就是配置不了),花生壳之前试过一次成功了，今天再次试的时候，怎么都配不成功。 还去搜了各种答案，尝试了几个愚蠢的解决方案(指的是，答案本身就是错的，或者说答案与我的情况不">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231103214600067.png">
+<meta property="og:image" content="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231103214655532.png">
+<meta property="og:image" content="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231103214629910.png">
+<meta property="og:image" content="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231103215020025.png">
+<meta property="og:image" content="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231103214544391.png">
+<meta property="og:image" content="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231103215253932.png">
+<meta property="article:published_time" content="2024-03-02T04:56:49.571Z">
+<meta property="article:modified_time" content="2023-11-03T14:00:34.405Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231103214600067.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-微信接口配置踩坑" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/02/%E5%BE%AE%E4%BF%A1%E6%8E%A5%E5%8F%A3%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/" class="article-date">
+  <time class="dt-published" datetime="2024-03-02T04:56:49.571Z" itemprop="datePublished">2024-03-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="微信接口配置踩坑"><a href="#微信接口配置踩坑" class="headerlink" title="微信接口配置踩坑"></a>微信接口配置踩坑</h1><blockquote>
+<p>这东西搞了我n个小时的时间，真的服</p>
+</blockquote>
+<h2 id="本地测试配置"><a href="#本地测试配置" class="headerlink" title="本地测试配置"></a>本地测试配置</h2><p>1.<strong>使用netapp完成内网穿透，认准netapp！</strong></p>
+<p>其他的ngrok或者花生壳啥的不好使！容易出现各种奇奇怪怪的bug(包括域名包含了”-“，这个微信服务器好像就是配置不了),花生壳之前试过一次成功了，今天再次试的时候，怎么都配不成功。</p>
+<p>还去搜了各种答案，尝试了几个愚蠢的解决方案(指的是，答案本身就是错的，或者说答案与我的情况不符合)</p>
+<p><strong>后面请教大佬，大佬推荐了netapp，一试完美解决！</strong></p>
+<p>-&gt;所以说，像这种配置啥东西的不要花太多时间去搞，及时抛出问题问别人，(可以花时间自己尝试搞一下，实在没有头绪，不要浪费时间了)</p>
+<p><strong>2.netapp使用教程</strong></p>
+<blockquote>
+<p>参考链接:</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42601136/article/details/108836388">NATAPP使用教程（内网穿透）_natapp内网穿透教程-CSDN博客</a></p>
+</blockquote>
+<p>第一步，到netapp官网下载zip文件，解压,里面有一个.exe文件</p>
+<p>第二步，注册账号完成实名认证，开通免费隧道(注意填端口号)</p>
+<p>第三步，复制 模板配置信息，填写隧道token(我的隧道处获取)，改名为config.ini</p>
+<p>另外，如果开了代理，要在这个文件填写，最好先关掉</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#将本文件放置于natapp同级目录 程序将读取 [default] 段</span><br><span class="line">#在命令行参数模式如 natapp -authtoken=xxx 等相同参数将会覆盖掉此配置</span><br><span class="line">#命令行参数 -config= 可以指定任意config.ini文件</span><br><span class="line">[default]</span><br><span class="line">authtoken=                 #对应一条隧道的authtoken，填具体token</span><br><span class="line">clienttoken=                    #对应客户端的clienttoken,将会忽略authtoken,若无请留空,</span><br><span class="line">log=none                        #log 日志文件,可指定本地文件, none=不做记录,stdout=直接屏幕输出 ,默认为none</span><br><span class="line">loglevel=ERROR                  #日志等级 DEBUG, INFO, WARNING, ERROR 默认为 DEBUG</span><br><span class="line">http_proxy=                  #代理设置 如 http://10.123.10.10:3128 非代理上网用户请务必留空</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>第四步，运行本地项目，运行netapp.exe,得到映射地址.</p>
+<p><img src="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231103214600067.png" alt="image-20231103214600067"></p>
+<p><img src="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231103214655532.png" alt="image-20231103214655532"></p>
+<p><img src="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231103214629910.png" alt="image-20231103214629910"></p>
+<p><img src="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231103215020025.png" alt="image-20231103215020025"></p>
+<p><img src="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231103214544391.png" alt="image-20231103214544391"></p>
+<blockquote>
+<p>注意，这个netapp生成的域名不是固定的，所以等项目启动后最好重新启动netapp.exe获取最新的域名。<br>注意 项目配置的端口号要与netapp申请的免费隧道的端口号一致</p>
+<p>注意，测试和部署环境的token可能不一致，注意核对</p>
+</blockquote>
+<h2 id="服务器配置"><a href="#服务器配置" class="headerlink" title="服务器配置"></a>服务器配置</h2><blockquote>
+<p>阿里云服务器，要在宝塔放行项目端口，还要去阿里云放行端口！！！</p>
+</blockquote>
+<p><img src="https://gitee.com/xrp0903/xrp-personal-chart-bed/raw/master/img/image-20231103215253932.png" alt="image-20231103215253932"></p>
+<p>没有绑定域名，输入ip地址，注意后面要附上端口号(端口号别填错了)</p>
+<p>eg</p>
+<p>​	127.0.0.1:8065</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/02/%E5%BE%AE%E4%BF%A1%E6%8E%A5%E5%8F%A3%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/" data-id="clt9m5mbu000hkch0eo1g0642" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/03/02/%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E3%80%81%E7%99%BB%E5%BD%95%E3%80%81%E9%89%B4%E6%9D%83%E5%9C%BA%E6%99%AF/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/03/02/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91-%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86%E8%83%BD%E5%8A%9B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/03/02/%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E3%80%81%E7%99%BB%E5%BD%95%E3%80%81%E9%89%B4%E6%9D%83%E5%9C%BA%E6%99%AF/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%BE%AE%E4%BF%A1%E6%8E%A5%E5%8F%A3%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91-%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86%E8%83%BD%E5%8A%9B/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%A4%9A%E6%80%81%E7%9A%84%E7%90%86%E8%A7%A3/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/02/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91-%E6%A8%A1%E6%9D%BF%E6%B6%88%E6%81%AF/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
